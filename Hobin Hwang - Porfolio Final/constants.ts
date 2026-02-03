@@ -1,4 +1,3 @@
-
 import { Project, Experience, Education, SkillCategory } from './types';
 
 export const PROFILE = {
@@ -30,17 +29,18 @@ export const PROJECTS: Project[] = [
     role: 'Brand Director (Founder)',
     tech: 'Adobe Illustrator, Adobe Photoshop',
     bgColor: 'bg-neutral-900', // Dark neutral
-    image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/7410bceb3778b7a45113db1681f127b8de9d7a95/Gemini_Generated_Image_2504032504032504%202.png',
+    // [수정 완료] -photo 저장소 연결
+    image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/Gemini_Generated_Image_2504032504032504%202.png',
     gallery: [
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/sns%20contents.png',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/sns%20contents%202.png',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/post%203%20demo.png',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/post%205%20demo.png',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/post%207-2%20demo.png',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/brand%20photo%203.jpg',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/product%20shot%203.jpg',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/product%20shot.jpg',
-      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/6ea2c56f2019800816977eee3cb2957b0ce8fbb5/product%20shot%202.jpg'
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/sns%20contents.png',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/sns%20contents%202.png',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/post%203%20demo.png',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/post%205%20demo.png',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/post%207-2%20demo.png',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/brand%20photo%203.jpg',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/product%20shot%203.jpg',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/product%20shot.jpg',
+      'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/product%20shot%202.jpg'
     ],
     description: [
       '[Concept: MZ세대의 딜레마를 입다]',
@@ -61,7 +61,8 @@ export const PROJECTS: Project[] = [
     role: '1인 개발 (Product Owner, Dev, Design)',
     tech: 'Antigravity(Gemini), ChatGPT(Codex), Lovable, Figma Make, Kakaomap API',
     bgColor: 'bg-[#1a1a1a]', // Off-black
-    image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/Gemini_Generated_Image_7kav2x7kav2x7kav.jpg',
+    // [수정 완료] -photo 저장소 연결
+    image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/Gemini_Generated_Image_7kav2x7kav2x7kav.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&q=80&w=1000'
@@ -86,10 +87,11 @@ export const PROJECTS: Project[] = [
     role: 'Product Planner & Developer',
     tech: 'Antigravity(Gemini), ChatGPT, Figma Make',
     bgColor: 'bg-[#111111]', // Pure dark
-    image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/7410bceb3778b7a45113db1681f127b8de9d7a95/Gemini_Generated_Image_ugelrmugelrmugel%20(1).png',
+    // [수정 완료] -photo 저장소 연결
+    image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/Gemini_Generated_Image_ugelrmugelrmugel%20(1).png',
     gallery: [
-        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/fc51e2c6861aa2193984a4efc86c849516d1b5f2/IMG_4419.jpg',
-        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/fc51e2c6861aa2193984a4efc86c849516d1b5f2/IMG_4407.jpg'
+        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/IMG_4419.jpg',
+        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/IMG_4407.jpg'
     ],
     description: [
       '무의식의 영역인 꿈을 AI 기술을 활용해 시각화하고 기록하는 서비스입니다.',
