@@ -1,4 +1,3 @@
-
 import { ArrowLeft } from 'lucide-react';
 import React, { useEffect } from 'react';
 import { Project } from '../types';
@@ -16,74 +15,79 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
   const isDreamRecorder = project.id === 'dream-recorder';
   const isRunningAudioNav = project.id === 'running-audio-nav';
 
+  // =================================================================
+  // [수정 완료] 이제 public 폴더에 있는 로컬 파일을 직접 가져옵니다.
+  // 외부 링크(https://...) 대신 짧은 주소(/파일이름)를 사용합니다.
+  // =================================================================
+
   // BORNLAZY brand story image
-  const brandStoryImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/brand%20story.png";
+  const brandStoryImage = "/brand story.png";
 
   // BORNLAZY conceptual images
   const conceptualImages = [
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/hoodie%20on%20the%20ground.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/hoodies%20on%20tree.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-01-27%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.39.08.png"
+    "/hoodie on the ground.jpg",
+    "/hoodies on tree.jpg",
+    "/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-01-27%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.39.08.png"
   ];
 
   // BORNLAZY Art Direction & Visuals Gallery
   const artDirectionImages = [
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/post%203%20demo.png",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/post%205%20demo.png",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/post%207-2%20demo.png",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/sns%20contents.png",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/sns%20contents%202.png",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/brand%20photo%205.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/brand%20photo%206.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/brand%20photo%207.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/brand%20photo%203.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/product%20shot%203.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/product%20shot.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/product%20shot%202.jpg"
+    "/post 3 demo.png",
+    "/post 5 demo.png",
+    "/post 7-2 demo.png",
+    "/sns contents.png",
+    "/sns contents 2.png",
+    "/brand photo 5.jpg",
+    "/brand photo 6.jpg",
+    "/brand photo 7.jpg",
+    "/brand photo 3.jpg",
+    "/product shot 3.jpg",
+    "/product shot.jpg",
+    "/product shot 2.jpg"
   ];
 
   // BORNLAZY identity spot images
   const identitySpotImages = [
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/identity%20spot%20key%20ring.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/yellow%20scarf%20identity%20spot.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-01-27%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.39.08.png"
+    "/identity spot key ring.jpg",
+    "/yellow scarf identity spot.jpg",
+    "/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202026-01-27%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.39.08.png"
   ];
 
   // BORNLAZY Marketing Result Images
   const marketingResultImages = [
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/Gemini_Generated_Image_va23w4va23w4va23.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4573.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4572.jpg"
+    "/Gemini_Generated_Image_va23w4va23w4va23.jpg",
+    "/IMG_4573.jpg",
+    "/IMG_4572.jpg"
   ];
 
-  // Running Audio Nav images
-  const runningNavHomeImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%8E%E1%85%A5%E1%86%BA%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.jpg";
-  const runningNavMapImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.jpg";
-  const runningNavArchiveImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%A9%E1%84%89%E1%85%B3.jpg";
-  const runningNavSearchImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A1%E1%86%B7.jpg";
-  const runningNavResultImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/result.jpg";
-  const runningNavOptimizationImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC.jpg";
-  const runningNavRoutePreviewImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg";
-  const runningNavTransitionImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.jpg";
-  const runningNavHistoryImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8.jpg";
-  const runningNavDetailPopupImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%92%E1%85%A1%E1%84%86%E1%85%A7%E1%86%AB%20%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8%20%E1%84%8F%E1%85%B3%E1%84%80%E1%85%A6%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg";
-  const runningNavInteractiveRouteImage = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg";
+  // Running Audio Nav images (한글 파일명 인코딩 유지)
+  const runningNavHomeImage = "/%E1%84%8E%E1%85%A5%E1%86%BA%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.jpg";
+  const runningNavMapImage = "/%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.jpg";
+  const runningNavArchiveImage = "/%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%A9%E1%84%89%E1%85%B3.jpg";
+  const runningNavSearchImage = "/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A1%E1%86%B7.jpg";
+  const runningNavResultImage = "/result.jpg";
+  const runningNavOptimizationImage = "/%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC.jpg";
+  const runningNavRoutePreviewImage = "/%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg";
+  const runningNavTransitionImage = "/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.jpg";
+  const runningNavHistoryImage = "/%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8.jpg";
+  const runningNavDetailPopupImage = "/%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%92%E1%85%A1%E1%84%86%E1%85%A7%E1%86%AB%20%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8%20%E1%84%8F%E1%85%B3%E1%84%80%E1%85%A6%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg";
+  const runningNavInteractiveRouteImage = "/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg";
 
   // Dream Recorder images
   const dreamRecorderInterfaceImages = [
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4419.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4407.jpg"
+    "/IMG_4419.jpg",
+    "/IMG_4407.jpg"
   ];
   const dreamRecorderInteractionImages = [
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4408.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4409.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4410.jpg"
+    "/IMG_4408.jpg",
+    "/IMG_4409.jpg",
+    "/IMG_4410.jpg"
   ];
-  const dreamRecorderMainResult = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4411.jpg";
-  const dreamRecorderGalleryView = "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/33.jpg";
+  const dreamRecorderMainResult = "/IMG_4411.jpg";
+  const dreamRecorderGalleryView = "/33.jpg";
   const dreamGalleryCollection = [
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/IMG_4418.jpg",
-    "https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/main/11.jpg"
+    "/IMG_4418.jpg",
+    "/11.jpg"
   ];
 
   return (
@@ -209,7 +213,7 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
                   <div className="space-y-2">
                     <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Art Direction & Visuals</h4>
                   </div>
-                  
+                 
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {artDirectionImages.map((img, i) => (
                       <div key={i} className="aspect-square rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
@@ -242,7 +246,7 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
                         <img src={img} alt={`Conceptual ${i}`} className="w-full h-full object-cover" />
                       </div>
                     ))}
-                    
+                   
                     <div className="aspect-[4/3] rounded-[40px] overflow-hidden shadow-xl">
                         <img src={conceptualImages[2]} alt="Conceptual 3" className="w-full h-full object-cover" />
                     </div>
@@ -464,7 +468,6 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
                     ))}
                   </div>
 
-                  {/* FIXED: Style unified to match other light grey cards */}
                   <div className="bg-gray-50/80 border border-gray-100 p-10 md:p-16 rounded-[40px] shadow-sm hover:shadow-md transition-all duration-500">
                     <h3 className="text-2xl md:text-3xl font-bold mb-8 break-keep leading-tight text-brand-black">가설을 결과로 증명하는 1인 메이커의 시선</h3>
                     <p className="text-lg md:text-xl text-gray-600 leading-relaxed break-keep">
@@ -515,9 +518,9 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
 
            {!isBornLazy && !isDreamRecorder && !isRunningAudioNav && project.gallery && (
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {project.gallery.map((img, i) => (
-                  <img key={i} src={img} alt="Gallery" className="w-full rounded-[40px] shadow-xl" />
-                ))}
+               {project.gallery.map((img, i) => (
+                 <img key={i} src={img} alt="Gallery" className="w-full rounded-[40px] shadow-xl" />
+               ))}
              </div>
            )}
         </div>
