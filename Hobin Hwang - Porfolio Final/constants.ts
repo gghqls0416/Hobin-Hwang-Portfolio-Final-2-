@@ -28,10 +28,11 @@ export const PROJECTS: Project[] = [
     period: '2025.04 - 2025.10',
     role: 'Brand Director (Founder)',
     tech: 'Adobe Illustrator, Adobe Photoshop',
-    bgColor: 'bg-neutral-900', // Dark neutral
-    // [수정 완료] -photo 저장소 연결
+    bgColor: 'bg-neutral-900',
+    // [수정] 띄어쓰기를 %20으로 변환 완료
     image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/Gemini_Generated_Image_2504032504032504%202.png',
     gallery: [
+      // [수정] 파일명 띄어쓰기 해결 (sns contents -> sns%20contents)
       'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/sns%20contents.png',
       'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/sns%20contents%202.png',
       'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/post%203%20demo.png',
@@ -60,8 +61,7 @@ export const PROJECTS: Project[] = [
     period: '2025.12 - 2026.01',
     role: '1인 개발 (Product Owner, Dev, Design)',
     tech: 'Antigravity(Gemini), ChatGPT(Codex), Lovable, Figma Make, Kakaomap API',
-    bgColor: 'bg-[#1a1a1a]', // Off-black
-    // [수정 완료] -photo 저장소 연결
+    bgColor: 'bg-[#1a1a1a]',
     image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/Gemini_Generated_Image_7kav2x7kav2x7kav.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800',
@@ -86,12 +86,14 @@ export const PROJECTS: Project[] = [
     period: '진행 중 (Current)',
     role: 'Product Planner & Developer',
     tech: 'Antigravity(Gemini), ChatGPT, Figma Make',
-    bgColor: 'bg-[#111111]', // Pure dark
-    // [수정 완료] -photo 저장소 연결
+    bgColor: 'bg-[#111111]',
+    // [수정] 파일명 띄어쓰기 해결
     image: 'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/Gemini_Generated_Image_ugelrmugelrmugel%20(1).png',
     gallery: [
-        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/IMG_4419.jpg',
-        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/IMG_4407.jpg'
+        // [중요 수정] 스크린샷 파일 목록에 있는 IMG_0407.jpg로 이름 수정 (기존: 4419)
+        // 만약 IMG_4419가 맞다면 파일이 업로드 안 된 것이니 확인 필요. 일단 보이는 파일로 연결
+        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/IMG_0407.jpg',
+        'https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio-photo/main/IMG_0400.jpg'
     ],
     description: [
       '무의식의 영역인 꿈을 AI 기술을 활용해 시각화하고 기록하는 서비스입니다.',
