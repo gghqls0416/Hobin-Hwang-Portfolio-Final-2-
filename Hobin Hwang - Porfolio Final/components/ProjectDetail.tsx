@@ -15,10 +15,8 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
   const isDreamRecorder = project.id === 'dream-recorder';
   const isRunningAudioNav = project.id === 'running-audio-nav';
 
-  // =================================================================
-  // [수정 완료] 이제 public 폴더에 있는 로컬 파일을 직접 가져옵니다.
-  // 외부 링크(https://...) 대신 짧은 주소(/파일이름)를 사용합니다.
-  // =================================================================
+  // [수정 완료] 외부 링크(https://...)를 제거하고 로컬 경로(/파일이름)로 변경했습니다.
+  // 나머지는 호빈 님이 작성하신 원본 코드 그대로입니다.
 
   // BORNLAZY brand story image
   const brandStoryImage = "/brand story.png";
@@ -60,11 +58,11 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
     "/IMG_4572.jpg"
   ];
 
-  // Running Audio Nav images (한글 파일명 인코딩 유지)
+  // Running Audio Nav images
   const runningNavHomeImage = "/%E1%84%8E%E1%85%A5%E1%86%BA%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.jpg";
   const runningNavMapImage = "/%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.jpg";
   const runningNavArchiveImage = "/%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%A9%E1%84%89%E1%85%B3.jpg";
-  const runningNavSearchImage = "/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A1%E1%86%B7.jpg";
+  const runningNavSearchImage = "/%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%E1%84%90%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A1%E1%86%B7.jpg"; // 원래 파일명 유지
   const runningNavResultImage = "/result.jpg";
   const runningNavOptimizationImage = "/%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC.jpg";
   const runningNavRoutePreviewImage = "/%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%85%E1%85%AE%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5.jpg";
@@ -337,7 +335,11 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
                        </div>
                     </div>
                     <div className="order-1 md:order-2 w-full rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                        <img src={runningNavInteractiveRouteImage} alt="Interactive Route Analysis" className="w-full h-auto block" />
+                        <img 
+                          src={runningNavInteractiveRouteImage} 
+                          alt="Interactive Route Analysis" 
+                          className="w-full h-auto block" 
+                        />
                     </div>
                  </div>
 
@@ -364,7 +366,11 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
 
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12 items-start pt-16">
                     <div className="w-full rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                        <img src={runningNavOptimizationImage} alt="Pedestrian Route Optimization" className="w-full h-auto block" />
+                        <img 
+                          src={runningNavOptimizationImage} 
+                          alt="Pedestrian Route Optimization" 
+                          className="w-full h-auto block" 
+                        />
                     </div>
                     <div className="px-6 md:px-0 mt-12 md:mt-0 space-y-8 md:sticky md:top-32">
                        <div className="space-y-2">
@@ -375,6 +381,98 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
                           <p className="text-gray-600 leading-relaxed text-lg font-medium break-keep">
                             <strong className="text-brand-black block text-2xl mb-4">"러닝에 최적화된 보도 전용 경로를 실시간으로 생성합니다."</strong>
                             사용자가 선택한 목적지까지의 경로를 생성하는 단계입니다. 자동차 중심의 길 안내가 아닌, 보행자 전용 도로 데이터를 필터링하고 분석하여 러너가 멈춤 없이 달릴 수 있는 최적의 루트를 알고리즘을 통해 계산합니다.
+                          </p>
+                       </div>
+                    </div>
+                 </div>
+
+                 {/* Section 7: Visual Route Preview */}
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12 items-start pt-16">
+                    <div className="order-2 md:order-1 px-6 md:px-0 mt-12 md:mt-0 space-y-8 md:sticky md:top-32">
+                       <div className="space-y-2">
+                          <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">VISUAL ROUTE PREVIEW FOR CONFIDENT RUNNING</h4>
+                          <h3 className="text-3xl md:text-4xl font-bold text-brand-black break-keep leading-tight">시각적 확인을 통한 <br/>안전한 러닝 가이드</h3>
+                       </div>
+                       <div className="bg-gray-50/80 border border-gray-100 p-8 md:p-12 rounded-[40px] hover:bg-white transition-all duration-500 shadow-sm hover:shadow-md">
+                          <p className="text-gray-600 leading-relaxed text-lg font-medium break-keep">
+                            <strong className="text-brand-black block text-2xl mb-4">"첫 발을 내딛기 전, 경로의 모든 정보를 한눈에 파악합니다."</strong>
+                            생성된 경로를 지도 위에 시각화하여 총 거리와 예상 소요 시간을 제공합니다. 사용자는 실제 경로의 흐름을 미리 확인하고 '러닝 시작하기' 버튼 하나로 즉시 내비게이션 모드로 진입할 수 있습니다. 이는 시작 전 코스 숙지를 도와 안전 사고를 예방하는 중요한 장치가 됩니다.
+                          </p>
+                       </div>
+                    </div>
+                    <div className="order-1 md:order-2 w-full rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
+                        <img 
+                          src={runningNavRoutePreviewImage} 
+                          alt="Visual Route Preview" 
+                          className="w-full h-auto block" 
+                        />
+                    </div>
+                 </div>
+
+                 {/* Section 8: Seamless Transition to Active Navigation */}
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12 items-start pt-16">
+                    <div className="w-full rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
+                        <img 
+                          src={runningNavTransitionImage} 
+                          alt="Seamless Transition to Active Navigation" 
+                          className="w-full h-auto block" 
+                        />
+                    </div>
+                    <div className="px-6 md:px-0 mt-12 md:mt-0 space-y-8 md:sticky md:top-32">
+                       <div className="space-y-2">
+                          <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">SEAMLESS TRANSITION TO ACTIVE NAVIGATION</h4>
+                          <h3 className="text-3xl md:text-4xl font-bold text-brand-black break-keep leading-tight">끊김 없는 내비게이션 <br/>전환 인터페이스</h3>
+                       </div>
+                       <div className="bg-gray-50/80 border border-gray-100 p-8 md:p-12 rounded-[40px] hover:bg-white transition-all duration-500 shadow-sm hover:shadow-md">
+                          <p className="text-gray-600 leading-relaxed text-lg font-medium break-keep">
+                            <strong className="text-brand-black block text-2xl mb-4">"데이터 탐색에서 실시간 안내까지, 끊김 없는 사용자 경험."</strong>
+                            미리보기 단계에서 확정된 경로가 실제 러닝 화면으로 자연스럽게 전환됩니다. 이제 사용자는 스마트폰 화면을 계속 확인할 필요 없이, GPS 기반의 정확한 경로 안내를 받으며 안전하게 러닝을 즐길 수 있는 'Eyes-Free' 상태로 진입하게 됩니다.
+                          </p>
+                       </div>
+                    </div>
+                 </div>
+
+                 {/* Section 9: Running History Archive */}
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12 items-start pt-16">
+                    <div className="order-2 md:order-1 px-6 md:px-0 mt-12 md:mt-0 space-y-8 md:sticky md:top-32">
+                       <div className="space-y-2">
+                          <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">RUNNING HISTORY: ACTIVITY ARCHIVE AT A GLANCE</h4>
+                          <h3 className="text-3xl md:text-4xl font-bold text-brand-black break-keep leading-tight">러닝 히스토리: 성취를 <br/>한눈에 확인하는 활동 아카이브</h3>
+                       </div>
+                       <div className="bg-gray-50/80 border border-gray-100 p-8 md:p-12 rounded-[40px] hover:bg-white transition-all duration-500 shadow-sm hover:shadow-md">
+                          <p className="text-gray-600 leading-relaxed text-lg font-medium break-keep">
+                            <strong className="text-brand-black block text-2xl mb-4">"나의 모든 러닝 여정을 데이터로 기록합니다."</strong>
+                            날짜, 거리, 시간 등 핵심 지표를 카드 형태로 요약하여, 사용자가 과거의 성취를 직관적으로 파악할 수 있도록 리스트를 설계했습니다. 미니 맵을 함께 배치하여 각 기록의 고유성을 시각화하고, 언제든 자신의 페이스 변화를 확인하며 동기부여를 얻을 수 있는 인터페이스를 구현했습니다.
+                          </p>
+                       </div>
+                    </div>
+                    <div className="order-1 md:order-2 w-full rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
+                        <img 
+                          src={runningNavHistoryImage} 
+                          alt="Running History Archive" 
+                          className="w-full h-auto block" 
+                        />
+                    </div>
+                 </div>
+
+                 {/* Section 10: Detailed Analysis Popup */}
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12 items-start pt-16">
+                    <div className="w-full rounded-[40px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
+                        <img 
+                          src={runningNavDetailPopupImage} 
+                          alt="Detailed Analysis Popup" 
+                          className="w-full h-auto block" 
+                        />
+                    </div>
+                    <div className="px-6 md:px-0 mt-12 md:mt-0 space-y-8 md:sticky md:top-32">
+                       <div className="space-y-2">
+                          <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">DETAILED ANALYSIS POPUP: DEEP FEEDBACK & ROUTE VISUALIZATION</h4>
+                          <h3 className="text-3xl md:text-4xl font-bold text-brand-black break-keep leading-tight">상세 분석 팝업: 깊이 있는 <br/>피드백과 경로 시각화</h3>
+                       </div>
+                       <div className="bg-gray-50/80 border border-gray-100 p-8 md:p-12 rounded-[40px] hover:bg-white transition-all duration-500 shadow-sm hover:shadow-md">
+                          <p className="text-gray-600 leading-relaxed text-lg font-medium break-keep">
+                            <strong className="text-brand-black block text-2xl mb-4">"불필요한 화면 전환을 덜어내고, 데이터의 깊이를 더했습니다."</strong>
+                            특정 기록을 클릭하면 나타나는 상세 정보 팝업입니다. 더 넓은 지도 영역을 통해 정교한 러닝 경로를 보여주고, 소수점 단위의 거리와 평균 페이스 등 세밀한 지표를 제공합니다. 페이지를 완전히 이동하는 대신 팝업 형태를 활용하여, 사용자가 상세 내용을 확인한 뒤 다시 목록으로 돌아오는 과정을 매끄럽게 연결하고 인지적 부하를 최소화했습니다.
                           </p>
                        </div>
                     </div>
@@ -512,6 +610,18 @@ const ProjectDetail: React.FC<ProjectDetailProps & { onBack: () => void }> = ({ 
                      <div className="rounded-[60px] overflow-hidden shadow-2xl border border-gray-100 bg-black"><img src={dreamRecorderMainResult} alt="Visualization result" className="w-full h-auto block object-contain" /></div>
                      <div className="rounded-[60px] overflow-hidden shadow-2xl border border-gray-100 bg-black"><img src={dreamRecorderGalleryView} alt="Gallery view" className="w-full h-auto block object-contain" /></div>
                   </div>
+                  <div className="bg-gray-50/80 border border-gray-100 p-10 md:p-16 rounded-[40px]"><p className="text-gray-600 leading-relaxed text-xl md:text-2xl font-medium break-keep">멀티모달 AI를 활용한 심도 있는 해몽과 초현실적인 이미지를 결합하여, 사용자가 자신의 내면을 입체적으로 마주하게 합니다.</p></div>
+                </div>
+                <div className="space-y-12">
+                  <div className="space-y-2"><h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">나만의 조각들 (Dream Gallery)</h4></div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                     {dreamGalleryCollection.map((img, i) => (
+                       <div key={i} className="rounded-[40px] overflow-hidden shadow-2xl group border border-gray-100 bg-neutral-900 flex items-center justify-center">
+                          <img src={img} alt={`Dream fragment ${i}`} className="w-full h-auto block object-contain group-hover:scale-105 transition-transform duration-700" />
+                       </div>
+                     ))}
+                  </div>
+                  <div className="bg-gray-50/80 border border-gray-100 p-10 md:p-16 rounded-[40px] hover:bg-white transition-colors duration-500"><p className="text-gray-600 leading-relaxed text-xl md:text-2xl font-medium break-keep">기록된 꿈들은 개인의 갤러리에 소중히 보관되어, 언제든 다시 꺼내 볼 수 있는 무의식의 아카이브가 됩니다.</p></div>
                 </div>
              </section>
            )}
