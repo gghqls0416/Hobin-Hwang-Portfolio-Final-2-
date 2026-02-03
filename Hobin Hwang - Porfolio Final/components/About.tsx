@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PROFILE } from '../constants';
 
@@ -13,8 +12,9 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2">
             <div className="relative aspect-[3/4] w-full max-w-md mx-auto overflow-hidden rounded-2xl shadow-xl bg-gray-200">
+               {/* [수정 완료] public 폴더에 있는 'self photo.jpg'를 연결했습니다 */}
                <img 
-                 src="https://raw.githubusercontent.com/gghqls0416/Hobin-Hwang-Portfolio/77c4a04899bce8b2df8fbc4211e10689183c1d0e/PHP_9098-1-1.jpg" 
+                 src="/self photo.jpg" 
                  alt="Hobin Hwang" 
                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                />
